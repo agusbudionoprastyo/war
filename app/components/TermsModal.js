@@ -1,15 +1,17 @@
 import React from 'react';
-
+import Particle from './particle';
 const TermsModal = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
+    
     <div 
-      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-50 z-50" 
-      onClick={onClose} // Close on overlay click
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-80 z-50" 
+      // onClick={onClose}
     >
+      <Particle />
       <div 
-        className="bg-white rounded-2xl shadow-lg p-6 w-80 z-60" 
+        className="bg-white rounded-2xl shadow-lg p-6 w-80 z-10" 
         onClick={(e) => e.stopPropagation()} // Prevent closing on modal click
       >
         <h2 className="text-xl font-bold mb-4" style={{ fontFamily: 'Roboto, sans-serif' }}>Terms & Condition</h2>

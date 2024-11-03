@@ -13,6 +13,8 @@ export default function Home() {
   const curDate = new Date();
   const eventDate = new Date("2024-11-03T14:00:00");
   const startDate = new Date("2024-11-03T14:00:00");
+  // const eventDate = new Date("2024-10-20T18:37:00");
+  // const startDate = new Date("2024-10-20T18:37:00");
   const endDate = new Date("2024-11-17T14:01:05");
 
   const [hasMounted, setHasMounted] = useState(false);
@@ -50,6 +52,7 @@ export default function Home() {
       if (now >= startDate && now <= endDate) {
         const checkoutStartTime = new Date(now);
         checkoutStartTime.setHours(14, 0, 0);
+        // checkoutStartTime.setHours(18, 37, 0);
 
         const checkoutEndTime = new Date(checkoutStartTime);
         checkoutEndTime.setSeconds(64);
@@ -82,6 +85,7 @@ export default function Home() {
       />
 
       {isCheckoutVisible && <Checkout />}
+      {/* <Checkout /> */}
 
       <main className="flex flex-col sm:items-start relative z-20">
         <div className="flex justify-between items-center mb-8">

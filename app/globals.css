@@ -55,3 +55,16 @@ body {
   color: transparent;
   text-shadow: rgba(245,245,245,0.4) 1px 1px 1px;
 }
+
+.fade-in {
+  opacity: 0;
+  transform: scale(0.5);
+  animation: fadeInScale 1s forwards; /* Adjust timing as needed */
+}
+
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
