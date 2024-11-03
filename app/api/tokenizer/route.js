@@ -8,28 +8,24 @@ let snap = new Midtrans.Snap({
 });
 
 export async function POST(request) {
-    const { id, productName, price, quantity, customer } = await request.json();
+    const { id, customer, itemDetails } = await request.json();
 
     // Extract customer details
     const { name, ig, email, phone } = customer;
 
+    // Hitung total gross_amount dari itemDetails
+    const grossAmount = itemDetails.reduce((total, item) => total + (item.price * item.quantity), 0);
+
     const parameter = {
-        item_details: [
-            {
-                id: id,
-                name: productName,
-                price: price,
-                quantity: quantity,
-            },
-        ],
+        item_details: itemDetails, // Menggunakan itemDetails yang diterima
         transaction_details: {
             order_id: id,
-            gross_amount: price * quantity,
+            gross_amount: grossAmount,
         },
         customer_details: {
             first_name: name || '',
             last_name: ig || '',
-            email: email || '',
+            email: email || 'customer@dafam.cloud',
             phone: phone || '',
         },
     };

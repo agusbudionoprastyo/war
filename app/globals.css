@@ -5,14 +5,16 @@
 :root {
   --background: #3C3D37;
   --foreground: #ededed;
-  --artotel: #e31d47;
+  --artotel: #eb1f5d;
+  --artdark: #071434;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --background: #3C3D37;
     --foreground: #ededed;
-    --artotel: #e31d47;
+    --artotel: #eb1f5d;
+    --artdark: #071434;
   }
 }
 
@@ -20,12 +22,6 @@ body {
   color: var(--background);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 }
 
 /* animation */
@@ -43,4 +39,19 @@ body {
 
 .zoom-animation {
   animation: zoom 1.5s infinite;
+}
+
+.countdown-text {
+  /* animation: fade 2s infinite; */
+  text-shadow: 
+    1px 2px 2px rgba(0, 0, 0, .5);
+}
+
+.engraved {
+  background-color: #000000;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: rgba(245,245,245,0.4) 1px 1px 1px;
 }

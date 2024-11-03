@@ -11,6 +11,7 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         artotel: "var(--artotel)",
+        artoteldark: "var(--artdark)",
       },
     },
   },
